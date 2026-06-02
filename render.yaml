@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: telegram-download-bot
+    runtime: python
+    repo: https://github.com/yourusername/telegram-download-bot
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: BOT_TOKEN
+        value: 8997029207:AAHbyFza1TPkSeSEc5CqZfJ9bqsTu-jtPs4
+      - key: API_ID
+        value: 31667098
+      - key: API_HASH
+        value: 3676d1a7a18bb956385816cb17171429
+      - key: STORAGE_CHANNEL_ID
+        value: -1003122311345
+      - key: ADMIN_SECRET
+        value: mySecret123
+      - key: PUBLIC_ENGINE_URL
+        value: https://telegram-download-bot.onrender.com
